@@ -14,7 +14,7 @@ function SearchBar({ onSubmit }) {
 
   return (
     <div>
-      <h1>Seach Bar: arjun</h1>
+      <h1>Search Bar : bond</h1>
       <form onSubmit={handleFormSubmit}>
         <input value={term} onChange={handleChange} />
       </form>
