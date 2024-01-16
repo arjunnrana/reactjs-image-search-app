@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { useState } from "react";
 
 function SearchBar({ onSubmit }) {
@@ -5,7 +6,7 @@ function SearchBar({ onSubmit }) {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    onSubmit("cars");
+    onSubmit(term);
   };
 
   const handleChange = (event) => {
@@ -14,7 +15,7 @@ function SearchBar({ onSubmit }) {
 
   return (
     <div>
-      <h1>Seach Bar: arjun</h1>
+      <Typography variant="h3">Search Bar</Typography>
       <form onSubmit={handleFormSubmit}>
         <input value={term} onChange={handleChange} />
       </form>
