@@ -1,11 +1,14 @@
+import { Typography } from "@mui/material";
 import { useState } from "react";
+import unsplashLogo from "../assets/unsplash.svg";
+import "./SearchBar.css";
 
 function SearchBar({ onSubmit }) {
   const [term, setTerm] = useState("");
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    onSubmit("cars");
+    onSubmit(term);
   };
 
   const handleChange = (event) => {
@@ -14,10 +17,20 @@ function SearchBar({ onSubmit }) {
 
   return (
     <div>
-      <h1>Search Bar : bond</h1>
-      <form onSubmit={handleFormSubmit}>
-        <input value={term} onChange={handleChange} />
-      </form>
+      <Typography variant="h3">
+        Search App: Using
+        {/* <img src={unsplashLogo} alt="unsplash_logo" /> */}
+        {"  "}
+        Unsplash
+      </Typography>
+      <hr />
+
+      <div className="search-bar">
+        <form onSubmit={handleFormSubmit}>
+          <lable>Enter Search Term</lable>
+          <input value={term} onChange={handleChange} />
+        </form>
+      </div>
     </div>
   );
 }
